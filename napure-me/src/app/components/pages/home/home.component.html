@@ -25,14 +25,52 @@
             </div>
         </div>
     </div>
-
-    <div class="jumbotron__info">
-        <div class="jumbotron__title"></div>
-        <div class="jumbotron__description"></div>
+    <div class="grid-row">
+        <div class="grid-row__half-section">
+            <div class="jumbotron__info">
+                <h1 class="jumbotron__title font--bold">
+                    {{ "jumbotron.title" | translate }}
+                    <img
+                        class="made-in-italy"
+                        src="../../../../assets/images/madeinitaly.png"
+                        alt=""
+                    />
+                </h1>
+                <p class="jumbotron__description">
+                    {{ "jumbotron.description" | translate }}
+                </p>
+                <div class="button button--action pulse-animation">
+                    {{ "header.becomeAMaster" | translate }}
+                </div>
+            </div>
+        </div>
+        <div class="grid-row__half-section">
+            <img
+                class="jumbotron__image"
+                src="../../../../assets/images/shampoo.png"
+                alt=""
+            />
+        </div>
     </div>
     <img
         class="liquid-item"
         src="../../../../assets/images/liquid-item.png"
         alt=""
     />
+
+    <div class="footer">
+        <div class="footer__social">
+            <img src="../../../../assets/images/instagram.png" alt="" />
+        </div>
+        <div class="footer__social">
+            <img src="../../../../assets/images/whatsapp.png" alt="" />
+        </div>
+        <div class="footer__social">
+            <img
+                class="viber"
+                src="../../../../assets/images/viber.png"
+                alt=""
+            />
+        </div>
+    </div>
 </div>

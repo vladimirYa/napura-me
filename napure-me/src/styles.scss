@@ -135,6 +135,7 @@ body {
     font-family: "Exo 2", sans-serif;
     font-weight: 300;
     overflow-x: hidden;
+    color: #002927;
 }
 
 .font {
@@ -144,4 +145,16 @@ body {
     &--bold {
         font-weight: 700;
     }
+}
+
+h1 {
+    font-size: 36px;
+}
+@media (max-width: 1500px) {
+    h1 {
+        font-size: 30px;
+    }
+}
+p {
+    font-size: 18px;
 }
