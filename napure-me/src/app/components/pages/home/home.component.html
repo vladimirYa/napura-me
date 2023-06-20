@@ -1,0 +1,38 @@
+<div class="jumbotron">
+    <div class="header">
+        <img
+            class="header__logo"
+            src="../../../../assets/images/logo-black.avif"
+            alt=""
+        />
+        <div class="kostul"></div>
+        <div class="header__items">
+            <div class="header__item" *ngFor="let item of headerItems">
+                {{ item | translate }}
+            </div>
+        </div>
+        <div class="langs">
+            <div
+                class="langs__lang"
+                *ngFor="let lang of langs; let i = index"
+                [ngClass]="{
+                    'border-right': i !== langs.length - 1,
+                    'active-c': lang === currentLang
+                }"
+                (click)="selectLang(lang)"
+            >
+                {{ lang.toUpperCase() }}
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron__info">
+        <div class="jumbotron__title"></div>
+        <div class="jumbotron__description"></div>
+    </div>
+    <img
+        class="liquid-item"
+        src="../../../../assets/images/liquid-item.png"
+        alt=""
+    />
+</div>
