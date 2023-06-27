@@ -1,0 +1,31 @@
+:host {
+    display: block;
+}
+
+.about {
+    position: relative;
+    z-index: 2;
+    &__description {
+        width: 700px;
+        text-align: center;
+        margin: 70px auto 50px;
+        line-height: 1.4;
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 50px;
+        & img {
+            height: 25px;
+            vertical-align: bottom;
+        }
+    }
+    .cert-images {
+        display: flex;
+        width: 1200px;
+        justify-content: space-around;
+        margin: 0 auto;
+        & img {
+            width: 350px;
+        }
+    }
+}

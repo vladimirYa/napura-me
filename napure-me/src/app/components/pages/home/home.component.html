@@ -7,8 +7,13 @@
         />
         <div class="kostul"></div>
         <div class="header__items">
-            <div class="header__item" *ngFor="let item of headerItems">
-                {{ item | translate }}
+            <div
+                class="header__item"
+                *ngFor="let item of headerItems"
+                [ngClass]="{ active: item.isActive }"
+                (click)="selectTab(item.id)"
+            >
+                {{ item.labelKey | translate }}
             </div>
         </div>
         <div class="langs">
@@ -25,31 +30,49 @@
             </div>
         </div>
     </div>
-    <div class="grid-row">
-        <div class="grid-row__half-section">
-            <div class="jumbotron__info">
-                <h1 class="jumbotron__title font--bold">
-                    {{ "jumbotron.title" | translate }}
-                    <img
-                        class="made-in-italy"
-                        src="../../../../assets/images/madeinitaly.png"
-                        alt=""
-                    />
-                </h1>
-                <p class="jumbotron__description">
-                    {{ "jumbotron.description" | translate }}
-                </p>
-                <div class="button button--action pulse-animation">
-                    {{ "header.becomeAMaster" | translate }}
+    <div class="carousel-wrapper">
+        <div class="carousel">
+            <div class="carousel__window" id="home" data-tab="home">
+                <div class="grid-row">
+                    <div class="grid-row__half-section">
+                        <div class="jumbotron__info">
+                            <h1 class="jumbotron__title font--bold">
+                                {{ "jumbotron.title" | translate }}
+                                <img
+                                    class="made-in-italy"
+                                    src="../../../../assets/images/madeinitaly.png"
+                                    alt=""
+                                />
+                            </h1>
+                            <p class="jumbotron__description">
+                                {{ "jumbotron.description" | translate }}
+                            </p>
+                            <div class="button button--action pulse-animation">
+                                {{ "header.becomeAMaster" | translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-row__half-section">
+                        <img
+                            class="jumbotron__image"
+                            src="../../../../assets/images/shampoo.png"
+                            alt=""
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="grid-row__half-section">
-            <img
-                class="jumbotron__image"
-                src="../../../../assets/images/shampoo.png"
-                alt=""
-            />
+            <div class="carousel__window" id="about" data-tab="about">
+                <app-about></app-about>
+            </div>
+            <div class="carousel__window" id="catalog" data-tab="catalog">
+                catalog
+            </div>
+            <div class="carousel__window" id="master" data-tab="master">
+                master
+            </div>
+            <div class="carousel__window" id="wholesale" data-tab="wholesale">
+                wholesale
+            </div>
         </div>
     </div>
     <img

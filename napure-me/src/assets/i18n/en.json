@@ -3,10 +3,17 @@
         "about": "about",
         "catalog": "catalog",
         "becomeAMaster": "become a master",
-        "wholesale": "wholesale"
+        "wholesale": "wholesale",
+        "home": "home"
     },
     "jumbotron": {
         "title": "NAPURA already in Montenegro!",
         "description": "Napura is a proffesional hair care company designed and manufactured entirely in Italy with only high-quality materials and traditional craftmanship."
+    },
+    "pages": {
+        "about": {
+            "brandDescription": "brand was founded in 2001 in Italy, the cradle of global art and culture, whose guiding principles are drawn from the values of Nature, Beauty and Design. Through continual research and meticulous craftsmanship, we create professional scalp and hair products whose unique performances express our desire to be “Sincerely Natural.”",
+            "certTitle": "Certifications"
+        }
     }
 }
