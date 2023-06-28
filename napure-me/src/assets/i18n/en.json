@@ -14,6 +14,23 @@
         "about": {
             "brandDescription": "brand was founded in 2001 in Italy, the cradle of global art and culture, whose guiding principles are drawn from the values of Nature, Beauty and Design. Through continual research and meticulous craftsmanship, we create professional scalp and hair products whose unique performances express our desire to be “Sincerely Natural.”",
             "certTitle": "Certifications"
+        },
+        "wholesale": {
+            "title": [
+                "If would like to use",
+                "NAPURA",
+                "in you work. Leave you contacts and we will send you our catalog and will discuss all related questions."
+            ]
         }
+    },
+    "formFieldNames": {
+        "name": "first and last name",
+        "email": "email",
+        "phone": "phone number",
+        "getCatalog": "get catalog",
+        "mesFav": "pick favorite"
+    },
+    "shared": {
+        "required": "required"
     }
 }

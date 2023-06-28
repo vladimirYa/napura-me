@@ -23,16 +23,6 @@ export class HomeComponent implements OnInit {
             isActive: true,
         },
         {
-            id: 'about',
-            labelKey: 'header.about',
-            isActive: false,
-        },
-        {
-            id: 'catalog',
-            labelKey: 'header.catalog',
-            isActive: false,
-        },
-        {
             id: 'master',
             labelKey: 'header.becomeAMaster',
             isActive: false,
@@ -40,6 +30,11 @@ export class HomeComponent implements OnInit {
         {
             id: 'wholesale',
             labelKey: 'header.wholesale',
+            isActive: false,
+        },
+        {
+            id: 'about',
+            labelKey: 'header.about',
             isActive: false,
         },
     ];
