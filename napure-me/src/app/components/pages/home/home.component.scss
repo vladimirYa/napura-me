@@ -16,7 +16,9 @@
     border: 1px solid $background-grey;
     &__info {
         margin-left: 100px;
-        margin-top: 200px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-70%);
     }
     &__title {
         margin-bottom: 10px;
@@ -30,7 +32,7 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        margin-top: -100px;
+        // margin-top: -100px;
         transform: translate(-50%, -50%);
     }
 }
@@ -185,6 +187,8 @@
         transition: 0.2s;
         animation-fill-mode: forwards;
         border: 1px solid transparent;
+        overflow-y: auto;
+        overflow-x: hidden;
         &.fadeIn {
             animation: fadeIn 1s 1;
             display: block;
