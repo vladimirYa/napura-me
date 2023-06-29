@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { langs } from '../../common/lang/langs';
+import { MatDialog } from '@angular/material/dialog';
+import { LangDialogComponent } from '../../common/lang-dialog/lang-dialog.component';
 
 interface HeaderItem {
     id: string;
@@ -14,7 +17,8 @@ interface HeaderItem {
     styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-    langs: string[] = ['cg', 'en', 'ru'];
+    langs: string[] = langs;
+
     currentLang: string = 'en';
 
     headerItems: HeaderItem[] = [
@@ -42,10 +46,12 @@ export class HomeComponent implements OnInit {
     constructor(
         private translate: TranslateService,
         private router: Router,
-        private ar: ActivatedRoute
+        private ar: ActivatedRoute,
+        private dialog: MatDialog
     ) {}
 
     ngOnInit(): void {
+        this.dialog.open(LangDialogComponent, {});
         this.translate.setDefaultLang('en');
         this.translate.addLangs(this.langs);
         this.translate.use('en');
@@ -58,11 +64,6 @@ export class HomeComponent implements OnInit {
                 this.syncTabs('home');
             }
         });
-    }
-
-    selectLang(lang: string): void {
-        this.translate.use(lang);
-        this.currentLang = lang;
     }
 
     selectTab(id: string): void {

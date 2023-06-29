@@ -17,17 +17,7 @@
             </div>
         </div>
         <div class="langs">
-            <div
-                class="langs__lang"
-                *ngFor="let lang of langs; let i = index"
-                [ngClass]="{
-                    'border-right': i !== langs.length - 1,
-                    'active-c': lang === currentLang
-                }"
-                (click)="selectLang(lang)"
-            >
-                {{ lang.toUpperCase() }}
-            </div>
+            <app-lang></app-lang>
         </div>
     </div>
     <div class="carousel-wrapper">

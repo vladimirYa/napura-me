@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ContactFormComponent } from './components/common/contact-form/contact-form.component';
 import { ContactDialogComponent } from './components/common/dialog/contact-dialog.component';
+import { LangComponent } from './components/common/lang/lang.component';
+import { LangDialogComponent } from './components/common/lang-dialog/lang-dialog.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +26,8 @@ import { ContactDialogComponent } from './components/common/dialog/contact-dialo
         BecomeAMasterComponent,
         ContactFormComponent,
         ContactDialogComponent,
+        LangComponent,
+        LangDialogComponent,
     ],
     imports: [
         BrowserModule,
