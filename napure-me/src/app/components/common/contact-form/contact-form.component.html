@@ -1,0 +1,80 @@
+<form class="form" [formGroup]="formf" (ngSubmit)="becomePartner(formf.value)">
+    <div class="form__input-wrapper">
+        <label class="form__label"
+            >{{ "formFieldNames.name" | translate
+            }}<span>({{ "shared.required" | translate }})</span></label
+        >
+        <input class="form__input" type="text" formControlName="name" id="" />
+        <div
+            class="error"
+            *ngIf="
+                formf.controls['name'].invalid &&
+                (formf.controls['name'].dirty || formf.controls['name'].touched)
+            "
+        >
+            {{ "shared.required" | translate }}*
+        </div>
+    </div>
+
+    <div class="form__input-wrapper">
+        <label class="form__label"
+            >{{ "formFieldNames.email" | translate
+            }}<span>({{ "shared.required" | translate }})</span></label
+        >
+        <input class="form__input" type="text" formControlName="email" id="" />
+        <div
+            class="error"
+            *ngIf="
+                formf.controls['email'].invalid &&
+                (formf.controls['email'].dirty ||
+                    formf.controls['email'].touched)
+            "
+        >
+            {{ "shared.required" | translate }}*
+        </div>
+    </div>
+    <div class="form__input-wrapper">
+        <label class="form__label"
+            >{{ "formFieldNames.phone" | translate
+            }}<span>({{ "shared.required" | translate }})</span></label
+        >
+        <input class="form__input" formControlName="phone" type="text" id="" />
+        <div
+            class="error"
+            *ngIf="
+                formf.controls['phone'].invalid &&
+                (formf.controls['phone'].dirty ||
+                    formf.controls['phone'].touched)
+            "
+        >
+            {{ "shared.required" | translate }}*
+        </div>
+    </div>
+    <div class="form__input-wrapper" style="border-bottom: 2px solid">
+        <label class="form__label"
+            >{{ "formFieldNames.mesFav" | translate
+            }}<span>({{ "shared.required" | translate }})</span></label
+        >
+        <div class="messengers">
+            <div
+                class="messenger"
+                *ngFor="let mes of messengers"
+                (click)="selectMessenger(mes)"
+                [ngClass]="{ active: activeMessanger === mes }"
+            >
+                <img
+                    src="{{ '../../../../assets/images/mes/' + mes + '.png' }}"
+                    alt=""
+                />
+                {{ mes }}
+            </div>
+        </div>
+    </div>
+    <button
+        type="submit"
+        [ngClass]="{ hover: formf.valid && activeMessanger }"
+        [disabled]="!(formf.valid && activeMessanger)"
+    >
+        {{ submitTextKey | translate }}
+    </button>
+</form>

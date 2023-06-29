@@ -1,0 +1,94 @@
+@import "../../../../assets/styles/variables.scss";
+
+.form {
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__label {
+        display: block;
+        span {
+            margin-left: 5px;
+            font-size: 10px;
+            position: relative;
+        }
+    }
+    &__input {
+        font: inherit;
+        border: none;
+        outline: none;
+        background: transparent !important;
+        padding: 10px;
+        width: 100%;
+        border-bottom: 2px solid;
+        box-sizing: border-box;
+        margin: 10px 0;
+        transition: 0.2s;
+        &:focus {
+            background-color: rgba(231, 240, 255, 0.5) !important;
+            border-bottom: 2px solid $action;
+        }
+        &:-webkit-autofill {
+            -webkit-box-shadow: none !important;
+            background-color: none !important;
+            background-image: none !important;
+        }
+        &-wrapper {
+            width: 300px;
+            .error {
+                margin-bottom: 10px;
+                color: red;
+                transition: 0.2s;
+                font-size: 12px;
+                margin-top: -5px;
+            }
+        }
+    }
+    button {
+        outline: none;
+        background: none;
+        font: inherit;
+        padding: 8px 15px;
+        border: 2px solid;
+        margin-left: auto;
+        margin-right: 100px;
+        margin-top: 15px;
+        cursor: pointer;
+        box-shadow: 200px 0px 0px 0 inset rgba(231, 240, 255, 0.5),
+            1px 0px 0px 0 inset $action;
+        transition: 0.3s;
+        &:disabled {
+            cursor: default;
+        }
+        &.hover {
+            &:hover {
+                box-shadow: 0px 0px 0px 0 inset rgba(231, 240, 255, 0.5),
+                    200px 0px 0px 0 inset rgba($action, 0.5);
+            }
+        }
+    }
+}
+.messengers {
+    display: flex;
+    margin: 20px 0 10px;
+    .messenger {
+        margin-right: 10px;
+        border: 1px solid;
+        padding: 3px;
+        cursor: pointer;
+        box-shadow: 1px 0px 0px 0 inset $action;
+        transition: 0.3s;
+        &:hover {
+            box-shadow: 0px 0px 0px 0 inset rgba(231, 240, 255, 0.5),
+                120px 0px 0px 0 inset rgba($action, 0.5);
+        }
+        &.active {
+            background-color: $action;
+        }
+        img {
+            height: 16px;
+            vertical-align: middle;
+        }
+    }
+}

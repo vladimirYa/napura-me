@@ -47,7 +47,10 @@
                             <p class="jumbotron__description">
                                 {{ "jumbotron.description" | translate }}
                             </p>
-                            <div class="button button--action pulse-animation">
+                            <div
+                                class="button button--action pulse-animation"
+                                (click)="goToMaster()"
+                            >
                                 {{ "header.becomeAMaster" | translate }}
                             </div>
                         </div>
@@ -64,11 +67,8 @@
             <div class="carousel__window" id="about" data-tab="about">
                 <app-about></app-about>
             </div>
-            <div class="carousel__window" id="catalog" data-tab="catalog">
-                catalog
-            </div>
             <div class="carousel__window" id="master" data-tab="master">
-                master
+                <app-master></app-master>
             </div>
             <div class="carousel__window" id="wholesale" data-tab="wholesale">
                 <app-wholesale></app-wholesale>

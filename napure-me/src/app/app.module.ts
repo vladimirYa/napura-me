@@ -9,6 +9,11 @@ import { NgxTranslateModule } from './modules/translate/translate.module';
 import { AboutComponent } from './components/pages/about/about.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WholesaleComponent } from './components/pages/wholesale/wholeslae.component';
+import { BecomeAMasterComponent } from './components/pages/become-a-master/become-a-master.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ContactFormComponent } from './components/common/contact-form/contact-form.component';
+import { ContactDialogComponent } from './components/common/dialog/contact-dialog.component';
 
 @NgModule({
     declarations: [
@@ -16,6 +21,9 @@ import { WholesaleComponent } from './components/pages/wholesale/wholeslae.compo
         HomeComponent,
         AboutComponent,
         WholesaleComponent,
+        BecomeAMasterComponent,
+        ContactFormComponent,
+        ContactDialogComponent,
     ],
     imports: [
         BrowserModule,
@@ -24,6 +32,8 @@ import { WholesaleComponent } from './components/pages/wholesale/wholeslae.compo
         NgxTranslateModule,
         ReactiveFormsModule,
         FormsModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

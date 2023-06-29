@@ -6,8 +6,11 @@
         }}</span>
         {{ "pages.wholesale.title.2" | translate }}
     </h2>
-
-    <form
+    <app-contact-form
+        submitTextKey="formFieldNames.getCatalog"
+        (onFormSubmit)="becomeAPartner($event)"
+    ></app-contact-form>
+    <!-- <form
         class="form"
         [formGroup]="formf"
         (ngSubmit)="becomePartner(formf.value)"
@@ -108,5 +111,5 @@
         >
             {{ "formFieldNames.getCatalog" | translate }}
         </button>
-    </form>
+    </form> -->
 </div>

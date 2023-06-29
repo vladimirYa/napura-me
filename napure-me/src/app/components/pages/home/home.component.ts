@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 interface HeaderItem {
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
         {
             id: 'home',
             labelKey: 'header.home',
-            isActive: true,
+            isActive: false,
         },
         {
             id: 'master',
@@ -38,13 +39,25 @@ export class HomeComponent implements OnInit {
             isActive: false,
         },
     ];
-    constructor(private translate: TranslateService) {}
+    constructor(
+        private translate: TranslateService,
+        private router: Router,
+        private ar: ActivatedRoute
+    ) {}
 
     ngOnInit(): void {
         this.translate.setDefaultLang('en');
         this.translate.addLangs(this.langs);
         this.translate.use('en');
-        this.syncTabs('home');
+        this.ar.queryParams.subscribe((params) => {
+            if (params['page']) {
+                this.syncActiveHItem(params['page']);
+                this.syncTabs(params['page']);
+            } else {
+                this.syncActiveHItem('home');
+                this.syncTabs('home');
+            }
+        });
     }
 
     selectLang(lang: string): void {
@@ -53,11 +66,15 @@ export class HomeComponent implements OnInit {
     }
 
     selectTab(id: string): void {
+        this.router.navigate(['/home'], { queryParams: { page: id } });
+        this.syncActiveHItem(id);
+        this.syncTabs(id);
+    }
+
+    syncActiveHItem(id: string) {
         this.headerItems.forEach((item: HeaderItem) => {
             item.isActive = item.id === id;
         });
-
-        this.syncTabs(id);
     }
 
     syncTabs(id: string) {
@@ -70,5 +87,8 @@ export class HomeComponent implements OnInit {
                 tab.classList.remove('fadeIn');
             }
         });
+    }
+    goToMaster() {
+        this.router.navigate(['/home'], { queryParams: { page: 'master' } });
     }
 }

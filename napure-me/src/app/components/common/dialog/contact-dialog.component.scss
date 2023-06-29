@@ -1,0 +1,25 @@
+@import "../../../../assets/styles/variables.scss";
+
+:host {
+    position: relative;
+}
+::ng-deep .mat-dialog-container {
+    background-color: $background-grey !important;
+    color: $text-dark !important;
+    padding-bottom: 40px;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+img {
+    top: 0;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
