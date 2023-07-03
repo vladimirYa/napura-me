@@ -39,7 +39,7 @@ export class ContactFormComponent implements OnInit {
     becomePartner(v: any) {
         const formValue = {
             ...v,
-            messanger: this.activeMessanger,
+            messenger: this.activeMessanger,
         };
         this.onFormSubmit.emit(formValue);
     }

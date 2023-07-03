@@ -16,6 +16,8 @@ import { ContactFormComponent } from './components/common/contact-form/contact-f
 import { ContactDialogComponent } from './components/common/dialog/contact-dialog.component';
 import { LangComponent } from './components/common/lang/lang.component';
 import { LangDialogComponent } from './components/common/lang-dialog/lang-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './services/api.service';
 
 @NgModule({
     declarations: [
@@ -32,6 +34,7 @@ import { LangDialogComponent } from './components/common/lang-dialog/lang-dialog
     imports: [
         BrowserModule,
         RouterModule,
+        HttpClientModule,
         AppRoutingModule,
         NgxTranslateModule,
         ReactiveFormsModule,
@@ -39,7 +42,7 @@ import { LangDialogComponent } from './components/common/lang-dialog/lang-dialog
         BrowserAnimationsModule,
         MatDialogModule,
     ],
-    providers: [],
+    providers: [ApiService],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

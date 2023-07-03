@@ -21,6 +21,15 @@
                 "NAPURA",
                 "in you work. Leave you contacts and we will send you our catalog and will discuss all related questions."
             ]
+        },
+        "master": {
+            "title": ["Become a ", "NAPURA", "master and join our community"],
+            "presteps": "Here are the steps to become a Napura master",
+            "steps": [
+                "Share your contacts and we will connect with you",
+                "Come to masterclass made by our Napura proffesional master, he will teach you all needed information about the product and how to work with it",
+                "Join our commuity"
+            ]
         }
     },
     "formFieldNames": {
@@ -31,6 +40,7 @@
         "mesFav": "pick favorite"
     },
     "shared": {
-        "required": "required"
+        "required": "required",
+        "shareContacts": "Share your contacts"
     }
 }

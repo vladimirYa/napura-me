@@ -1,8 +1,58 @@
 <h1>
-    Share your contacts
-    <img src="../../../../assets/images/close.png" alt="" (click)="close()" />
+    <span *ngIf="loading === LOADING_STATE.DEAD">{{
+        "shared.shareContacts" | translate
+    }}</span>
+    <img
+        class="close"
+        src="../../../../assets/images/close.png"
+        alt=""
+        (click)="close()"
+    />
 </h1>
-<app-contact-form
-    submitTextKey="header.becomeAMaster"
-    (onFormSubmit)="becomeAMaster($event)"
-></app-contact-form>
+<div class="wrapper">
+    <app-contact-form
+        *ngIf="loading === LOADING_STATE.DEAD"
+        submitTextKey="header.becomeAMaster"
+        (onFormSubmit)="becomeAMaster($event)"
+    ></app-contact-form>
+
+    <img
+        *ngIf="loading === LOADING_STATE.LOADING"
+        class="loading"
+        src="../../../../assets/images/loading_2.png"
+        alt=""
+    />
+    <div
+        class="loaded"
+        *ngIf="loading !== LOADING_STATE.LOADING || LOADING_STATE.DEAD"
+    >
+        <div class="loaded__success" *ngIf="loading === LOADING_STATE.SUCCESS">
+            <img
+                src="../../../../assets/images/check.png"
+                alt=""
+                class="success"
+            />
+            <h2>SUCCESSFUL!</h2>
+            <p>
+                Welcome to our NAPURA proffesionals community! Thank you for
+                sharing your contacts. We will connect with you as soon as
+                possible.
+            </p>
+            <div
+                class="button button--action pulse-animation"
+                (click)="goToHome()"
+            >
+                back to home
+            </div>
+        </div>
+        <div class="loaded__success" *ngIf="loading === LOADING_STATE.ERROR">
+            <img
+                src="../../../../assets/images/warning.png"
+                alt=""
+                class="success"
+            />
+            <h2>WARINING!</h2>
+            <p>Something went wrong, please try again later or contact us.</p>
+        </div>
+    </div>
+</div>
