@@ -1,4 +1,4 @@
-import Wholesale from '../../schemas/master/master.schema';
+import Wholesale from '../../schemas/wholesale/wholesale.schema';
 import { IWholesale, IWholesaleDocument } from "../../interfaces/wholesale/wholesale.interface";
 
 class WholesaleService {

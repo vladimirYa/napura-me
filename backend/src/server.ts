@@ -7,6 +7,7 @@ import cors from "cors";
 import helmet from "helmet";
 import dotenv from "dotenv";
 import MasterRoutes from "./api/routes/master.routes";
+import WholesaleRoutes from "./api/routes/wholesale.routes";
 
 class App {
     public app: Application;
@@ -32,6 +33,8 @@ class App {
     protected routes(): void {
         // Auth Routes
         this.app.use('/master', MasterRoutes);
+        this.app.use('/wholesale', WholesaleRoutes);
+
         // // User Routes
         // this.app.use("/api/user", UserRoutes);
 
