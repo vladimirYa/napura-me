@@ -42,4 +42,29 @@ export class ApiService {
             }
         );
     }
+    createWholesaleApplication(master: IMaster): Observable<IMaster> {
+        const headers = new HttpHeaders().set(
+            'Access-Control-Allow-Origin',
+            '*'
+        );
+        return this.http.post<IMaster>(
+            'http://localhost:8000/wholesale/create',
+            master,
+            {
+                headers,
+            }
+        );
+    }
+    getAllWholesaleApplications(): Observable<IMaster[]> {
+        const headers = new HttpHeaders().set(
+            'Access-Control-Allow-Origin',
+            '*'
+        );
+        return this.http.get<IMaster[]>(
+            'http://localhost:8000/wholesale/get-all',
+            {
+                headers,
+            }
+        );
+    }
 }
