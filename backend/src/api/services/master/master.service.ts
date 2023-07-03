@@ -12,7 +12,7 @@ class MasterService {
         
         return await Master.create({
             ...body
-        }).catch((err) => {
+        }).catch((err: any) => {
             if (err.code && err.code === 11000) {
                 return err;
             } else {

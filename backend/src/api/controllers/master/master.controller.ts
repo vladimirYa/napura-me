@@ -14,7 +14,6 @@ class MasterController implements IController {
     async create(req: Request, res: Response): Promise<Response> {
 
         const master: IMasterDocument | any = await MasterService.create(req.body);
-        console.log(master)
         if (master.code) {
             if (master.code === 11000) return res.status(400).json(master.keyValue);
 

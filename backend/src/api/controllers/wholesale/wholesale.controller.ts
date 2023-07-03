@@ -13,9 +13,13 @@ class WholesaleController implements IController {
 
     async create(req: Request, res: Response): Promise<Response> {
 
-        const wholesales: IWholesaleDocument = await WholesaleService.create(req.body);
+        const wholesale: IWholesaleDocument | any = await WholesaleService.create(req.body);
+        if (wholesale.code) {
+            if (wholesale.code === 11000) return res.status(400).json(wholesale.keyValue);
 
-        return res.send(wholesales);
+            return res.status(400);
+        }
+        return res.send(wholesale);
     }
 
     async read(req: Request, res: Response): Promise<Response>  {

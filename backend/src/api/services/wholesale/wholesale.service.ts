@@ -12,6 +12,12 @@ class WholesaleService {
         
         return await Wholesale.create({
             ...body
+        }).catch((err: any) => {
+            if (err.code && err.code === 11000) {
+                return err;
+            } else {
+                return err
+            }
         });
     }
 
