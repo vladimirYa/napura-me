@@ -8,6 +8,7 @@ import helmet from "helmet";
 import dotenv from "dotenv";
 import MasterRoutes from "./api/routes/master.routes";
 import WholesaleRoutes from "./api/routes/wholesale.routes";
+import DumbRoutes from "./api/routes/dumb.routes";
 
 class App {
     public app: Application;
@@ -34,6 +35,7 @@ class App {
         // Auth Routes
         this.app.use('/master', MasterRoutes);
         this.app.use('/wholesale', WholesaleRoutes);
+        this.app.use('/', DumbRoutes);
 
         // // User Routes
         // this.app.use("/api/user", UserRoutes);

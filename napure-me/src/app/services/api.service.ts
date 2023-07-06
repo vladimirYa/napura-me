@@ -12,6 +12,10 @@ export interface IMaster {
     phone: string;
     messenger: string;
 }
+export interface Auth {
+    login: string;
+    pass: string;
+}
 
 @Injectable()
 export class ApiService {
@@ -66,5 +70,14 @@ export class ApiService {
                 headers,
             }
         );
+    }
+    auth(creds: Auth) {
+        const headers = new HttpHeaders().set(
+            'Access-Control-Allow-Origin',
+            '*'
+        );
+        return this.http.post<any>('http://localhost:8000/auth', creds, {
+            headers,
+        });
     }
 }

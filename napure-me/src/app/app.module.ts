@@ -18,6 +18,7 @@ import { LangComponent } from './components/common/lang/lang.component';
 import { LangDialogComponent } from './components/common/lang-dialog/lang-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './services/api.service';
+import { AdminComponent } from './components/pages/admin/admin.component';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { ApiService } from './services/api.service';
         ContactDialogComponent,
         LangComponent,
         LangDialogComponent,
+        AdminComponent,
     ],
     imports: [
         BrowserModule,

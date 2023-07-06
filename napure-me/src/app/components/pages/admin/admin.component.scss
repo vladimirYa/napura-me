@@ -1,0 +1,42 @@
+@import "../../../../assets/styles/variables.scss";
+
+:host {
+    display: block;
+    margin-top: 100px;
+}
+
+.dash {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.appl {
+    border-bottom: 1px solid;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    &__item {
+        width: 25%;
+    }
+}
+
+.wrapper {
+    max-height: 400px;
+    overflow: auto;
+    margin-bottom: 50px;
+}
+h1 {
+    display: inline-block;
+}
+.refresh {
+    display: inline-block;
+    margin-left: 100px;
+    border: 2px solid $action;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    float: right;
+    &:active {
+        border: 2px solid #fff;
+    }
+}

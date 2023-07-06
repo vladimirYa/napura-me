@@ -41,6 +41,7 @@
     },
     "shared": {
         "required": "required",
-        "shareContacts": "Share your contacts"
+        "shareContacts": "Share your contacts",
+        "login": "login"
     }
 }
