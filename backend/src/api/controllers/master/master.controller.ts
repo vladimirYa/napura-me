@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { IController } from '../../interfaces/common/controller.interface';
 import { IMasterDocument } from '../../interfaces/master/master.interface';
 import MasterService from '../../services/master/master.service';
+import emailService from '../../services/email/email.service';
 
 class MasterController implements IController {
 
@@ -19,6 +20,16 @@ class MasterController implements IController {
 
             return res.status(400);
         }
+
+        await emailService.send({
+            from: 'HOODIE',
+            to: 'vladimir.yaryhin@gmail.com, vikanistor27@gmail.com',
+            subject: 'NEW MASTER REQUEST',
+            text: ` New master request: ${master.name} --- ${master.phone} --- ${master.email} --- ${master.messenger}`
+        }).catch((err) => {
+            console.log(err);
+        }); 
+        
         return res.send(master);
     }
 

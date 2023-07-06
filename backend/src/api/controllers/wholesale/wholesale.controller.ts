@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { IController } from '../../interfaces/common/controller.interface';
 import { IWholesaleDocument } from '../../interfaces/wholesale/wholesale.interface';
 import WholesaleService from '../../services/wholesale/wholesale.service';
+import emailService from '../../services/email/email.service';
 
 class WholesaleController implements IController {
 
@@ -19,6 +20,15 @@ class WholesaleController implements IController {
 
             return res.status(400);
         }
+        await emailService.send({
+            from: 'HOODIE',
+            to: 'vladimir.yaryhin@gmail.com, vikanistor27@gmail.com',
+            subject: 'NEW WHOLESALE REQUEST',
+            text: ` New wholesale request: ${wholesale.name} --- ${wholesale.phone} --- ${wholesale.email} --- ${wholesale.messenger}`
+        }).catch((err) => {
+            console.log(err);
+        }); 
+        
         return res.send(wholesale);
     }
 
