@@ -24,7 +24,7 @@ export class LangComponent implements OnInit {
     selectLang(lang: string) {
         this.currentLang = lang;
         this.translate.use(lang);
-
+        localStorage.setItem('l', lang);
         this.onSelectLang.emit(lang);
     }
 }

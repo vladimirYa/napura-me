@@ -1,17 +1,24 @@
 <div class="jumbotron">
-    <div class="header">
+    <div class="header" #header>
         <img
+            [hidden]="!isHeaderDark"
+            class="header__logo"
+            src="../../../../assets/images/napura-logo-white.png"
+            alt=""
+        />
+        <img
+            [hidden]="isHeaderDark"
             class="header__logo"
             src="../../../../assets/images/logo-black.avif"
             alt=""
         />
-        <div class="kostul"></div>
+        <div class="kostul" #kastyl></div>
         <div class="header__items">
             <div
                 class="header__item"
                 *ngFor="let item of headerItems"
                 [ngClass]="{ active: item.isActive }"
-                (click)="selectTab(item.id)"
+                (click)="scrollTo(item)"
             >
                 {{ item.labelKey | translate }}
             </div>
@@ -19,14 +26,17 @@
         <div class="langs">
             <app-lang></app-lang>
         </div>
+        <div class="shape shape-top-right"></div>
     </div>
     <div class="carousel-wrapper">
-        <div class="carousel">
-            <div class="carousel__window" id="home" data-tab="home">
+        <div class="carousel" #carousel>
+            <div class="carousel__window" id="home" data-section="home">
                 <div class="grid-row">
                     <div class="grid-row__half-section">
                         <div class="jumbotron__info">
-                            <h1 class="jumbotron__title font--bold">
+                            <h1
+                                class="jumbotron__title font--bold heading-border-bottom"
+                            >
                                 {{ "jumbotron.title" | translate }}
                                 <img
                                     class="made-in-italy"
@@ -53,25 +63,29 @@
                         />
                     </div>
                 </div>
+                <img
+                    class="liquid-item"
+                    src="../../../../assets/images/liquid-item.png"
+                    alt=""
+                />
             </div>
-            <div class="carousel__window" id="about" data-tab="about">
+            <div class="carousel__window white" id="about" data-section="about">
                 <app-about></app-about>
             </div>
-            <div class="carousel__window" id="master" data-tab="master">
+            <div class="carousel__window" id="master" data-section="master">
                 <app-master></app-master>
             </div>
-            <div class="carousel__window" id="wholesale" data-tab="wholesale">
+            <div
+                class="carousel__window white"
+                id="wholesale"
+                data-section="wholesale"
+            >
                 <app-wholesale></app-wholesale>
             </div>
         </div>
     </div>
-    <img
-        class="liquid-item"
-        src="../../../../assets/images/liquid-item.png"
-        alt=""
-    />
 
-    <div class="footer">
+    <!-- <div class="footer">
         <div class="footer__social">
             <img src="../../../../assets/images/instagram.png" alt="" />
         </div>
@@ -85,5 +99,5 @@
                 alt=""
             />
         </div>
-    </div>
+    </div> -->
 </div>

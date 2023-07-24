@@ -1,15 +1,47 @@
 :host {
     display: block;
 }
+.desc-cover {
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    background: rgb(240, 240, 240);
+}
 
+.section-heading {
+    position: relative;
+    top: -30px;
+    left: 20px;
+    font-size: 30px;
+}
+.heading {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
 .about {
     position: relative;
     z-index: 2;
+    background-color: white;
+    &-content-box {
+        width: 700px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
     &__description {
         width: 700px;
         text-align: center;
         margin: 70px auto 50px;
         line-height: 1.4;
+        margin-top: 0;
     }
     &__title {
         text-align: center;
@@ -21,11 +53,18 @@
     }
     .cert-images {
         display: flex;
-        width: 1200px;
-        justify-content: space-around;
+        width: 700px;
+        justify-content: space-between;
         margin: 0 auto;
-        & img {
-            width: 350px;
+        .cert-cover {
+            width: 160px;
+            height: 160px;
+            border: 1px solid;
+            & img {
+                display: block;
+                height: 130px;
+                margin: 15px auto;
+            }
         }
     }
 }
