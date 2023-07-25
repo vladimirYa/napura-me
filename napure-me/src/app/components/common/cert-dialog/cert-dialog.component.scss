@@ -1,0 +1,29 @@
+@import "../../../../assets/styles/variables.scss";
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #2d2d2d;
+}
+
+.cert {
+    height: 600px;
+}
+
+.close {
+    margin-right: 20px;
+    width: 20px;
+    margin-left: auto;
+    display: block;
+    margin-top: 20px;
+    cursor: pointer;
+}
+::ng-deep .custom-modalbox .mat-dialog-container {
+    background-color: $background-grey;
+    border-radius: 2px;
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}

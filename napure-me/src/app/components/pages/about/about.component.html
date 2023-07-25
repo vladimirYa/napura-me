@@ -7,8 +7,23 @@
         </p>
     </div>
     <div class="about-content-box">
-        <div>
+        <div class="cons">
             <h2 class="about__title heading">we are staninding for:</h2>
+            <div class="standing-images">
+                <img
+                    src="../../../../assets/images/nature-ingridients.png"
+                    alt=""
+                />
+                <img src="../../../../assets/images/sls.png" alt="" />
+                <img
+                    src="../../../../assets/images/quality-certified.png"
+                    alt=""
+                />
+                <img
+                    src="../../../../assets/images/made-in-italy-logo.png"
+                    alt=""
+                />
+            </div>
         </div>
         <h2 class="about__title heading">
             {{ "pages.about.certTitle" | translate }}
@@ -16,13 +31,39 @@
         </h2>
 
         <div class="cert-images">
-            <div class="cert-cover">
+            <div class="cert-cover" (click)="openCert(1)">
+                <div class="mirror">
+                    <p class="cert-name">BVC</p>
+                    <img
+                        src="../../../../assets/images/document.png"
+                        alt=""
+                        class="document"
+                    />
+                </div>
                 <img src="../../../../assets/images/cert_1.png" alt="" />
             </div>
-            <div class="cert-cover">
+            <div class="cert-cover" (click)="openCert(2)">
+                <div class="mirror">
+                    <p class="cert-name">OIQ</p>
+                    <img
+                        src="../../../../assets/images/document.png"
+                        alt=""
+                        class="document"
+                    />
+                </div>
+
                 <img src="../../../../assets/images/cert_2.png" alt="" />
             </div>
-            <div class="cert-cover">
+            <div class="cert-cover" (click)="openCert(3)">
+                <div class="mirror">
+                    <p class="cert-name">EIA</p>
+                    <img
+                        src="../../../../assets/images/document.png"
+                        alt=""
+                        class="document"
+                    />
+                </div>
+
                 <img src="../../../../assets/images/cert_3.png" alt="" />
             </div>
         </div>

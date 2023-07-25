@@ -1,14 +1,14 @@
-<h1>
-    <span *ngIf="loading === LOADING_STATE.DEAD">{{
-        "shared.shareContacts" | translate
-    }}</span>
+<div class="header">
+    <h1 *ngIf="loading === LOADING_STATE.DEAD">
+        {{ "shared.shareContacts" | translate }}
+    </h1>
     <img
         class="close"
-        src="../../../../assets/images/close.png"
+        src="../../../../assets/images/close-button.png"
         alt=""
         (click)="close()"
     />
-</h1>
+</div>
 <div class="wrapper">
     <app-contact-form
         *ngIf="loading === LOADING_STATE.DEAD"

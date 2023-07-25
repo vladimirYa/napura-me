@@ -2,7 +2,21 @@
     display: block;
     height: 100%;
 }
-
+.section-heading {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+}
+.heading {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
 .master {
     height: 100%;
     &__image {
@@ -19,6 +33,7 @@
         left: 50%;
         transform: translate(-50%, -65%);
         width: 700px;
+        height: 250px;
     }
     &__title {
         margin-bottom: 20px;

@@ -19,6 +19,7 @@ import { LangDialogComponent } from './components/common/lang-dialog/lang-dialog
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './services/api.service';
 import { AdminComponent } from './components/pages/admin/admin.component';
+import { CertDialogComponent } from './components/common/cert-dialog/cert-dialog.component';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import { AdminComponent } from './components/pages/admin/admin.component';
         LangComponent,
         LangDialogComponent,
         AdminComponent,
+        CertDialogComponent,
     ],
     imports: [
         BrowserModule,

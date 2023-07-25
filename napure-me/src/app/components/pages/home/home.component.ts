@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         {
             id: 'home',
             labelKey: 'header.home',
-            isActive: false,
+            isActive: true,
         },
         {
             id: 'about',
