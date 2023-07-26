@@ -134,8 +134,4 @@ export class HomeComponent implements OnInit, AfterViewInit {
             item.isActive = item.id === id;
         });
     }
-
-    goToMaster() {
-        this.router.navigate(['/home'], { queryParams: { page: 'master' } });
-    }
 }
