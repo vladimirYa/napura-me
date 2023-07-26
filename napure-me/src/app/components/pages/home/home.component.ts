@@ -103,7 +103,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.renderer2.removeClass(this.header.nativeElement, 'dark');
                 this.renderer2.removeClass(this.kastyl.nativeElement, 'dark');
             }
-            console.log(event.target.scrollTop);
             let currentSection = sectionsLimits.find((section, i) => {
                 return (
                     event.target.scrollTop + 77 * (i + 1) >
@@ -112,7 +111,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
                         section.bottom - window.innerHeight * 0.2
                 );
             });
-            console.log(currentSection);
             if (currentSection) {
                 this.syncActiveHItem(currentSection.id);
             }
