@@ -5,6 +5,13 @@
             class="header__logo"
             src="../../../../assets/images/napura-logo-white.png"
             alt=""
+            (click)="
+                scrollTo({
+                    id: 'home',
+                    isActive: true,
+                    labelKey: 'header.home'
+                })
+            "
         />
         <img
             [hidden]="isHeaderDark"
@@ -49,7 +56,13 @@
                             </p>
                             <div
                                 class="button button--action pulse-animation"
-                                (click)="goToMaster()"
+                                (click)="
+                                    scrollTo({
+                                        id: 'master',
+                                        isActive: true,
+                                        labelKey: 'header.becomeAMaster'
+                                    })
+                                "
                             >
                                 {{ "header.becomeAMaster" | translate }}
                             </div>

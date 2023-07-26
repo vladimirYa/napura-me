@@ -81,9 +81,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        console.log(this.carsousel.nativeElement);
         const carouselEl = this.carsousel.nativeElement;
         this.sections = document.querySelectorAll('[data-section]');
+
+        let sectionsLimits = [...this.sections].map(
+            (section: HTMLElement, index: number) => {
+                return {
+                    top: section.offsetTop,
+                    bottom: window.innerHeight * (index + 1),
+                    id: section.id,
+                };
+            }
+        );
 
         let unlisten = this.renderer2.listen(carouselEl, 'scroll', (event) => {
             this.isHeaderDark = event.target.scrollTop > 77;
@@ -94,24 +103,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.renderer2.removeClass(this.header.nativeElement, 'dark');
                 this.renderer2.removeClass(this.kastyl.nativeElement, 'dark');
             }
-            // if (
-            console.log(carouselEl.scrollTop);
-            console.log(
-                (
-                    document.querySelector(
-                        `[data-section=${this.activeHeaderItem.id}]`
-                    ) as any
-                ).offsetTop
-            );
-            //     carouselEl.scrollTop -
-            //         (
-            //             document.querySelector(
-            //                 `[data-section=${this.activeHeaderItem.id}]`
-            //             ) as any
-            //         ).offsetTop
-            // );
-            // ) {
-            // }
+            console.log(event.target.scrollTop);
+            let currentSection = sectionsLimits.find((section, i) => {
+                return (
+                    event.target.scrollTop + 77 * (i + 1) >
+                        section.top - window.innerHeight * 0.2 &&
+                    event.target.scrollTop + 77 * (i + 1) <
+                        section.bottom - window.innerHeight * 0.2
+                );
+            });
+            console.log(currentSection);
+            if (currentSection) {
+                this.syncActiveHItem(currentSection.id);
+            }
         });
     }
 
@@ -133,17 +137,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         });
     }
 
-    // syncsections(id: string) {
-    //     const sections = document.querySelectorAll('[data-section]');
-
-    //     sections.forEach((section) => {
-    //         if (section.attributes['data-section' as any].nodeValue === id) {
-    //             section.classList.add('fadeIn');
-    //         } else {
-    //             section.classList.remove('fadeIn');
-    //         }
-    //     });
-    // }
     goToMaster() {
         this.router.navigate(['/home'], { queryParams: { page: 'master' } });
     }
