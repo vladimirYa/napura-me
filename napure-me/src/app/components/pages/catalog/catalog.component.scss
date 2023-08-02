@@ -1,0 +1,50 @@
+:host {
+    display: block;
+    padding-bottom: 50px;
+}
+
+.section-heading {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+}
+.heading {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    // height: 800px;
+    overflow: auto;
+    margin-top: 20px;
+
+    &__cell {
+        width: 33.33%;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+}
+
+.clickable-text {
+    display: block;
+    margin: 0px auto;
+    width: 150px;
+    text-align: center;
+    margin-top: 40px;
+    padding: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+    // border-bottom: 1px solid;
+    color: #c4c4c4;
+}

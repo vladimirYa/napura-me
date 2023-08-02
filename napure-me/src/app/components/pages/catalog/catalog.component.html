@@ -1,0 +1,19 @@
+<h2 class="heading section-heading">catalog</h2>
+
+<div class="grid">
+    <div class="grid__cell" *ngFor="let product of products">
+        <app-product [data]="product"></app-product>
+    </div>
+</div>
+
+<p class="clickable-text" *ngIf="!isShowMore" (click)="toggleShowMore()">
+    show more
+</p>
+<div class="grid" *ngIf="isShowMore">
+    <div class="grid__cell" *ngFor="let product of products2">
+        <app-product [data]="product"></app-product>
+    </div>
+</div>
+<p *ngIf="isShowMore" class="clickable-text" (click)="toggleShowMore()">
+    show less
+</p>

@@ -51,6 +51,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
             isActive: false,
         },
         {
+            id: 'catalog',
+            labelKey: 'header.catalog',
+            isActive: false,
+        },
+        {
             id: 'master',
             labelKey: 'header.becomeAMaster',
             isActive: false,
@@ -133,5 +138,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.headerItems.forEach((item: HeaderItem) => {
             item.isActive = item.id === id;
         });
+    }
+    showless(event: any) {
+        let catalog = this.headerItems.find((item) => item.id === 'catalog');
+        this.scrollTo(catalog as HeaderItem);
     }
 }

@@ -82,8 +82,20 @@
                     alt=""
                 />
             </div>
-            <div class="carousel__window white" id="about" data-section="about">
+
+            <div
+                class="carousel__window lightgrey"
+                id="about"
+                data-section="about"
+            >
                 <app-about></app-about>
+            </div>
+            <div
+                class="carousel__window white"
+                id="catalog"
+                data-section="catalog"
+            >
+                <app-catalog (showless)="showless($event)"></app-catalog>
             </div>
             <div class="carousel__window" id="master" data-section="master">
                 <app-master></app-master>
