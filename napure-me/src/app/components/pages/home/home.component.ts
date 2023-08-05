@@ -2,7 +2,9 @@ import {
     AfterViewInit,
     Component,
     ElementRef,
+    Inject,
     OnInit,
+    PLATFORM_ID,
     Renderer2,
     ViewChild,
 } from '@angular/core';
@@ -11,6 +13,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { langs } from '../../common/lang/langs';
 import { MatDialog } from '@angular/material/dialog';
 import { LangDialogComponent } from '../../common/lang-dialog/lang-dialog.component';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { LOCAL_STORAGE } from '@ng-web-apis/common';
 
 interface HeaderItem {
     id: string;
@@ -70,30 +74,41 @@ export class HomeComponent implements OnInit, AfterViewInit {
         private translate: TranslateService,
         private router: Router,
         private dialog: MatDialog,
-        private renderer2: Renderer2
+        private renderer2: Renderer2,
+        @Inject(DOCUMENT) private _doc: Document,
+        @Inject(LOCAL_STORAGE) public localStorage: Storage,
+        @Inject(PLATFORM_ID) private readonly _platformId: Object
     ) {}
 
     ngOnInit(): void {
         this.translate.setDefaultLang('en');
         this.translate.addLangs(this.langs);
         this.translate.use('en');
-
-        if (!localStorage.getItem('l')) {
-            this.dialog.open(LangDialogComponent, {});
-        } else {
-            this.translate.use(localStorage.getItem('l') as string);
-        }
+        setTimeout(() => {
+            console.log(this.localStorage.getItem('l'));
+            if (isPlatformBrowser(this._platformId)) {
+                if (!this.localStorage.getItem('l')) {
+                    this.dialog.open(LangDialogComponent, {});
+                } else {
+                    this.translate.use(
+                        this.localStorage.getItem('l') as string
+                    );
+                }
+            }
+        }, 1000);
     }
 
     ngAfterViewInit(): void {
         const carouselEl = this.carsousel.nativeElement;
-        this.sections = document.querySelectorAll('[data-section]');
+        this.sections = this._doc.querySelectorAll('[data-section]');
 
         let sectionsLimits = [...this.sections].map(
             (section: HTMLElement, index: number) => {
                 return {
                     top: section.offsetTop,
-                    bottom: window.innerHeight * (index + 1),
+                    bottom:
+                        (this._doc.defaultView as Window).innerHeight *
+                        (index + 1),
                     id: section.id,
                 };
             }

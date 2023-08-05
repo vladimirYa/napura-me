@@ -1,6 +1,15 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+    Component,
+    EventEmitter,
+    Inject,
+    OnInit,
+    Output,
+    PLATFORM_ID,
+} from '@angular/core';
 import { langs } from './langs';
 import { TranslateService } from '@ngx-translate/core';
+import { LOCAL_STORAGE } from '@ng-web-apis/common';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
     selector: 'app-lang',
@@ -13,7 +22,11 @@ export class LangComponent implements OnInit {
     langs: string[] = langs;
     currentLang: string = 'en';
 
-    constructor(private translate: TranslateService) {}
+    constructor(
+        private translate: TranslateService,
+        @Inject(LOCAL_STORAGE) public localStorage: Storage,
+        @Inject(PLATFORM_ID) private readonly _platformId: Object
+    ) {}
 
     ngOnInit(): void {
         this.translate.onLangChange.subscribe((lang) => {
@@ -22,9 +35,11 @@ export class LangComponent implements OnInit {
     }
 
     selectLang(lang: string) {
-        this.currentLang = lang;
-        this.translate.use(lang);
-        localStorage.setItem('l', lang);
-        this.onSelectLang.emit(lang);
+        if (isPlatformBrowser(this._platformId) === true) {
+            this.currentLang = lang;
+            this.translate.use(lang);
+            this.localStorage.setItem('l', lang);
+            this.onSelectLang.emit(lang);
+        }
     }
 }
