@@ -35,6 +35,21 @@
         <div class="langs">
             <app-lang></app-lang>
         </div>
+        <div class="menu">
+            <img
+                *ngIf="!isMobileMenuOpened"
+                src="../../../../assets/images/menu.png"
+                alt="open menu icon"
+                (click)="toggleMenu()"
+            />
+            <img
+                *ngIf="isMobileMenuOpened"
+                class="menu-close"
+                src="../../../../assets/images/close-button.png"
+                alt="close menu icon"
+                (click)="toggleMenu()"
+            />
+        </div>
         <div class="shape shape-top-right"></div>
     </div>
     <div class="carousel-wrapper">
@@ -130,4 +145,13 @@
             />
         </div>
     </div> -->
+</div>
+<div class="menu-items" *ngIf="isMobileMenuOpened">
+    <div
+        class="menu__item"
+        *ngFor="let item of headerItems"
+        (click)="scrollTo(item)"
+    >
+        {{ item.labelKey | translate }}
+    </div>
 </div>

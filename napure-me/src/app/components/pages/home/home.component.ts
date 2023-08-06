@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     @ViewChild('kastyl') kastyl: ElementRef;
 
     langs: string[] = langs;
+    isMobileMenuOpened: boolean = false;
 
     currentLang: string = 'en';
     isHeaderDark: boolean = false;
@@ -137,6 +138,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     scrollTo(headerItem: HeaderItem) {
+        if (this.isMobileMenuOpened) {
+            this.isMobileMenuOpened = false;
+        }
         this.syncActiveHItem(headerItem.id);
         this.activeHeaderItem = headerItem;
         let section = document.querySelector(
@@ -156,5 +160,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     showless(event: any) {
         let catalog = this.headerItems.find((item) => item.id === 'catalog');
         this.scrollTo(catalog as HeaderItem);
+    }
+    toggleMenu() {
+        this.isMobileMenuOpened = !this.isMobileMenuOpened;
     }
 }
