@@ -24,10 +24,10 @@
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
-    // height: 800px;
     overflow: auto;
     margin-top: 20px;
-
+    width: 80%;
+    margin-left: 10%;
     &__cell {
         width: 33.33%;
         display: flex;
@@ -41,7 +41,7 @@
     margin: 0px auto;
     width: 150px;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 70px;
     padding: 5px;
     text-decoration: underline;
     cursor: pointer;
@@ -54,6 +54,8 @@
 @media only screen and (max-width: 450px) {
     .grid {
         overflow: hidden;
+        width: 100%;
+        margin-left: 0%;
         &__cell {
             width: 50%;
         }
