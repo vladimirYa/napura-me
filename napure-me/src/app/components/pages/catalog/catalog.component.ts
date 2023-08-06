@@ -53,7 +53,7 @@ export class CatalogComponent implements OnInit {
             urlName: 'S8',
         },
         {
-            name: 'NAPURA C8 CONDITIONER CREAM',
+            name: 'C8 CONDITIONER CREAM',
             size: '200ml',
             urlName: 'C8',
         },

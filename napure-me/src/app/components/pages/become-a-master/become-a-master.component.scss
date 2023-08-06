@@ -1,9 +1,11 @@
+@import "../../../../assets/styles/variables.scss";
+
 :host {
     display: block;
     height: 100%;
 }
 .section-heading {
-    position: relative;
+    position: absolute;
     top: 20px;
     left: 20px;
     font-size: 30px;
@@ -49,5 +51,63 @@
     li {
         margin-bottom: 10px;
         line-height: 1.2;
+    }
+    #bmm {
+        display: none;
+    }
+}
+
+/// MEDIA ///
+
+@media only screen and (max-width: 450px) {
+    .grid {
+        &-row {
+            display: block;
+            position: relative;
+            &__half-section {
+                box-sizing: border-box;
+                padding: 15px;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .master {
+        &__title {
+            font-size: 20px;
+        }
+        &__description {
+            font-size: 16px;
+        }
+        &__info {
+            top: auto;
+            left: auto;
+            transform: none;
+            width: 100%;
+            height: auto;
+            margin-top: 70px;
+            padding: 15px;
+            box-sizing: border-box;
+            line-height: 1.4;
+        }
+        &__image {
+            width: 100%;
+            top: auto;
+            left: auto;
+            transform: none;
+            display: block;
+            margin: 0px auto;
+        }
+        #bml {
+            display: none;
+        }
+        #bmm {
+            display: block;
+            text-align: center;
+            background-color: $action;
+            color: white;
+            box-shadow: none;
+            margin: 40px 0 20px;
+        }
     }
 }

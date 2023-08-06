@@ -48,3 +48,14 @@
     // border-bottom: 1px solid;
     color: #c4c4c4;
 }
+
+/// MEDIA ///
+
+@media only screen and (max-width: 450px) {
+    .grid {
+        overflow: hidden;
+        &__cell {
+            width: 50%;
+        }
+    }
+}

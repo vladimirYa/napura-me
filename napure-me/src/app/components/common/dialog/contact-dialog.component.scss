@@ -84,3 +84,13 @@ img.close {
     background-color: $main-black;
     padding: 1px;
 }
+
+@media only screen and (max-width: 450px) {
+    .wrapper {
+        width: 100%;
+    }
+    h1 {
+        font-size: 16px;
+        margin-top: 23px;
+    }
+}

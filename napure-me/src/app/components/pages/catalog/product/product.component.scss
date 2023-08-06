@@ -20,3 +20,18 @@
         font-weight: 100;
     }
 }
+/// MEDIA ///
+
+@media only screen and (max-width: 450px) {
+    :host {
+        width: 100%;
+    }
+    .product {
+        width: 100%;
+        &__data {
+            font-size: 12px;
+            border-right: 1px solid;
+            height: 50px;
+        }
+    }
+}

@@ -83,3 +83,20 @@
         transform: rotate(359deg);
     }
 }
+
+@media only screen and (max-width: 450px) {
+    .wrapper {
+        width: 100%;
+    }
+    .form {
+        width: 100%;
+    }
+    .wholesale {
+        &__title {
+            font-size: 18px;
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+    }
+}

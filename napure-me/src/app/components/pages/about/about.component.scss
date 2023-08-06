@@ -138,3 +138,35 @@
         }
     }
 }
+/// MEDIA ///
+
+@media only screen and (max-width: 450px) {
+    .about {
+        &__description {
+            width: 400px;
+            font-size: 15px;
+        }
+    }
+    .grid-row {
+        display: block;
+        &__half-section {
+            width: 100%;
+        }
+        .standing-images {
+            & img {
+                height: 100px;
+            }
+        }
+        .cert-images {
+            width: 100%;
+            & .cert-cover {
+                width: 100px;
+                height: 100px;
+                & > img {
+                    height: 60px;
+                    margin: 25px auto;
+                }
+            }
+        }
+    }
+}

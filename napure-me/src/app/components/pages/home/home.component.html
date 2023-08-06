@@ -2,6 +2,7 @@
     <div class="header" #header>
         <img
             [hidden]="!isHeaderDark"
+            id="white"
             class="header__logo"
             src="../../../../assets/images/napura-logo-white.png"
             alt="napura hair care products Montenegro logo white"
@@ -15,6 +16,7 @@
         />
         <img
             [hidden]="isHeaderDark"
+            id="dark"
             class="header__logo"
             src="../../../../assets/images/logo-black.avif"
             alt="napura hair care products Montenegro logo black"
@@ -51,7 +53,7 @@
                                     alt="napura hair products Montenegro made in italy logo"
                                 />
                             </h1>
-                            <p class="jumbotron__description">
+                            <p class="jumbotron__description" id="jdl">
                                 {{ "jumbotron.description" | translate }}
                             </p>
                             <div
@@ -74,6 +76,9 @@
                             src="../../../../assets/images/shampoo.png"
                             alt="napura hair shampoo Montenegro"
                         />
+                        <p class="jumbotron__description" id="jdm">
+                            {{ "jumbotron.description" | translate }}
+                        </p>
                     </div>
                 </div>
                 <img
