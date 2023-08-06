@@ -6,65 +6,89 @@
             {{ "pages.about.brandDescription" | translate }}
         </p>
     </div>
-    <div class="about-content-box">
-        <div class="cons">
-            <h2 class="about__title heading">we are staninding for:</h2>
-            <div class="standing-images">
-                <img
-                    src="../../../../assets/images/nature-ingridients.png"
-                    alt=""
-                />
-                <img src="../../../../assets/images/sls.png" alt="" />
-                <img
-                    src="../../../../assets/images/quality-certified.png"
-                    alt=""
-                />
-                <img
-                    src="../../../../assets/images/made-in-italy-logo.png"
-                    alt=""
-                />
-            </div>
+    <div class="grid-row">
+        <div class="grid-row__half-section">
+            <img
+                class="woman-about"
+                src="../../../../assets/images/tanned-woman-without-makeup-posing-among-tropical-plants-with-huge-leaves.jpg"
+                alt="woman in trees representing use of nature ingredients for Napura hair products"
+            />
         </div>
-        <h2 class="about__title heading">
-            {{ "pages.about.certTitle" | translate }}
-            <img src="../../../../assets/images/correct.png" alt="" />
-        </h2>
-
-        <div class="cert-images">
-            <div class="cert-cover" (click)="openCert(1)">
-                <div class="mirror">
-                    <p class="cert-name">BVC</p>
+        <div class="about-content-box grid-row__half-section">
+            <div class="cons">
+                <h2 class="about__title heading">we are staninding for:</h2>
+                <div class="standing-images">
                     <img
-                        src="../../../../assets/images/document.png"
-                        alt=""
-                        class="document"
+                        src="../../../../assets/images/nature-ingridients.png"
+                        alt="Napura hair care products in Montenegro nature ingredients image"
+                    />
+                    <img
+                        src="../../../../assets/images/sls.png"
+                        alt="Napura hair care products in Montenegro sls free image"
+                    />
+                    <img
+                        src="../../../../assets/images/quality-certified.png"
+                        alt="Napura hair care products in Montenegro quality certified image"
+                    />
+                    <img
+                        src="../../../../assets/images/made-in-italy-logo.png"
+                        alt="Napura hair care products in Montenegro made in italy image"
                     />
                 </div>
-                <img src="../../../../assets/images/cert_1.png" alt="" />
             </div>
-            <div class="cert-cover" (click)="openCert(2)">
-                <div class="mirror">
-                    <p class="cert-name">OIQ</p>
+            <h2 class="about__title heading">
+                {{ "pages.about.certTitle" | translate }}
+                <img
+                    src="../../../../assets/images/correct.png"
+                    alt="Napura hair care products in Montenegro certified logo"
+                />
+            </h2>
+
+            <div class="cert-images">
+                <div class="cert-cover" (click)="openCert(1)">
+                    <div class="mirror">
+                        <p class="cert-name">BVC</p>
+                        <img
+                            src="../../../../assets/images/document.png"
+                            alt="Napura hair care products in Montenegro document logo"
+                            class="document"
+                        />
+                    </div>
                     <img
-                        src="../../../../assets/images/document.png"
-                        alt=""
-                        class="document"
+                        src="../../../../assets/images/cert_1.png"
+                        alt="Napura hair care products in Montenegro certificate mini image"
                     />
                 </div>
+                <div class="cert-cover" (click)="openCert(2)">
+                    <div class="mirror">
+                        <p class="cert-name">EIA</p>
+                        <img
+                            src="../../../../assets/images/document.png"
+                            alt="Napura hair care products in Montenegro document logo"
+                            class="document"
+                        />
+                    </div>
 
-                <img src="../../../../assets/images/cert_2.png" alt="" />
-            </div>
-            <div class="cert-cover" (click)="openCert(3)">
-                <div class="mirror">
-                    <p class="cert-name">EIA</p>
                     <img
-                        src="../../../../assets/images/document.png"
-                        alt=""
-                        class="document"
+                        src="../../../../assets/images/cert_2.png"
+                        alt="Napura hair care products in Montenegro certificate mini image"
                     />
                 </div>
+                <div class="cert-cover" (click)="openCert(3)">
+                    <div class="mirror">
+                        <p class="cert-name">MII</p>
+                        <img
+                            src="../../../../assets/images/document.png"
+                            alt="Napura hair care products in Montenegro document logo"
+                            class="document"
+                        />
+                    </div>
 
-                <img src="../../../../assets/images/cert_3.png" alt="" />
+                    <img
+                        src="../../../../assets/images/cert_3.png"
+                        alt="Napura hair care products in Montenegro certificate mini image"
+                    />
+                </div>
             </div>
         </div>
     </div>

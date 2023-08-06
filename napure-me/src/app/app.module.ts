@@ -1,5 +1,8 @@
 import { NgModule, TransferState } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {
+    BrowserModule,
+    provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/pages/home/home.component';
@@ -25,7 +28,7 @@ import { ProductComponent } from './components/pages/catalog/product/product.com
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { translateBrowserLoaderFactory } from './services/translate-loaders/translate-loader.browser';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-
+import { Meta } from '@angular/platform-browser';
 @NgModule({
     declarations: [
         AppComponent,
@@ -61,7 +64,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
         BrowserAnimationsModule,
         MatDialogModule,
     ],
-    providers: [ApiService],
+    providers: [ApiService, provideClientHydration()],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

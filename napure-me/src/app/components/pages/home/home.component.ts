@@ -85,7 +85,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.translate.addLangs(this.langs);
         this.translate.use('en');
         setTimeout(() => {
-            console.log(this.localStorage.getItem('l'));
             if (isPlatformBrowser(this._platformId)) {
                 if (!this.localStorage.getItem('l')) {
                     this.dialog.open(LangDialogComponent, {});
