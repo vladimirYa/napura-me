@@ -11,11 +11,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AppComponent implements OnInit {
     static isBrowser = new BehaviorSubject<boolean>(false);
-
+    public isServer: boolean = true;
     constructor(
         private translate: TranslateService,
         private meta: Meta,
-        private titleService: Title
+        private titleService: Title,
+        @Inject(PLATFORM_ID) private platformId: Object
     ) {
         translate.setDefaultLang('en');
         translate.addLangs(['en', 'me', 'ru']);
@@ -23,11 +24,20 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        if (isPlatformBrowser(this.platformId)) {
+            setTimeout(() => {
+                this.isServer = false;
+            });
+        }
         this.titleService.setTitle('NAPURA - Hair products in Montenegro');
         this.meta.addTag({
             name: 'description',
             content:
                 'Napura already in Montenegro! Napura is a proffesional hair care products company designed and manufactured entirely in Italy with only high-quality materials and traditional craftmanship.',
+        });
+        this.meta.addTag({
+            name: 'robots',
+            content: 'index, follow',
         });
     }
 
