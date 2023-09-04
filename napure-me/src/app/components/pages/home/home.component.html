@@ -55,37 +55,69 @@
     <div class="carousel-wrapper">
         <div class="carousel" #carousel>
             <div class="carousel__window" id="home" data-section="home">
-                <div class="grid-row">
-                    <div class="grid-row__half-section">
-                        <div class="jumbotron__info">
-                            <h1
-                                class="jumbotron__title font--bold heading-border-bottom"
-                            >
-                                {{ "jumbotron.title" | translate }}
+                <div class="jumbo">
+                    <!-- <div class="grid-row"> -->
+                    <!-- <div class="grid-row__half-section"> -->
+                    <div class="jumbotron__info" style="width: 50%">
+                        <h1
+                            class="jumbotron__title font--bold heading-border-bottom"
+                        >
+                            {{ "jumbotron.title" | translate }}
+                            <!-- <img
+                                class="made-in-italy"
+                                src="../../../../assets/images/madeinitaly.png"
+                                alt="napura hair products Montenegro made in italy logo"
+                            /> -->
+                        </h1>
+                        <p class="jumbotron__description" id="jdl">
+                            {{ "jumbotron.description" | translate }}
+                        </p>
+                        <ul class="pros-list">
+                            <li class="pl">
                                 <img
-                                    class="made-in-italy"
-                                    src="../../../../assets/images/madeinitaly.png"
-                                    alt="napura hair products Montenegro made in italy logo"
+                                    src="../../../../assets/images/checked (1).png"
+                                    alt=""
                                 />
-                            </h1>
-                            <p class="jumbotron__description" id="jdl">
-                                {{ "jumbotron.description" | translate }}
-                            </p>
-                            <div
-                                class="button button--action pulse-animation"
-                                (click)="
-                                    scrollTo({
-                                        id: 'master',
-                                        isActive: true,
-                                        labelKey: 'header.becomeAMaster'
-                                    })
-                                "
-                            >
-                                {{ "header.becomeAMaster" | translate }}
-                            </div>
+                                ANTI DANDRUFF
+                            </li>
+                            <li class="pl">
+                                <img
+                                    src="../../../../assets/images/checked (1).png"
+                                    alt=""
+                                />
+                                ANTI HAIR LOSS
+                            </li>
+                            <li class="pl">
+                                <img
+                                    src="../../../../assets/images/checked (1).png"
+                                    alt=""
+                                />
+                                HAIR REPAIR
+                            </li>
+                            <li class="pl">
+                                <img
+                                    src="../../../../assets/images/checked (1).png"
+                                    alt=""
+                                />
+                                COLOR PROTECT
+                            </li>
+                        </ul>
+                        <div
+                            class="button button--action pulse-animation"
+                            (click)="
+                                scrollTo({
+                                    id: 'master',
+                                    isActive: true,
+                                    labelKey: 'header.becomeAMaster'
+                                })
+                            "
+                        >
+                            {{ "header.becomeAMaster" | translate }}
                         </div>
                     </div>
-                    <div class="grid-row__half-section">
+                    <!-- </div> -->
+                    <!-- <div class="grid-row__half-section"> -->
+                    <div style="width: 50%">
                         <img
                             class="jumbotron__image"
                             src="../../../../assets/images/shampoo.webp"
@@ -95,6 +127,8 @@
                             {{ "jumbotron.description" | translate }}
                         </p>
                     </div>
+                    <!-- </div> -->
+                    <!-- </div> -->
                 </div>
                 <img
                     class="liquid-item"
