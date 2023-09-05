@@ -6,7 +6,10 @@
     background-color: $background-grey;
     overflow: hidden;
 }
-
+.button-cover {
+    height: 50px;
+    margin-top: 15px;
+}
 .jumbotron {
     position: relative;
     top: 0;
@@ -14,11 +17,20 @@
     width: 100%;
     height: 100%;
     &__info {
-        margin-left: 100px;
         position: relative;
         // top: 50%;
         // transform: translateY(-70%);
         // height: 200px;
+        // height: 350px;
+        box-sizing: border-box;
+        padding: 0 50px;
+        .ad {
+            background-color: rgb(252 80 112);
+            margin: 10px 0;
+            padding: 10px;
+            font-weight: bold;
+            color: white;
+        }
     }
     &__title {
         font-size: 30px;
@@ -54,6 +66,13 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    overflow: hidden;
+    .new {
+        position: absolute;
+        right: -2px;
+        top: -2px;
+        width: 60px;
+    }
 }
 .pros-list {
     margin-bottom: 20px;

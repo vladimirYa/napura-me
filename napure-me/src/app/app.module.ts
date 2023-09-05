@@ -28,7 +28,7 @@ import { ProductComponent } from './components/pages/catalog/product/product.com
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { translateBrowserLoaderFactory } from './services/translate-loaders/translate-loader.browser';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { Meta } from '@angular/platform-browser';
+import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -44,6 +44,7 @@ import { Meta } from '@angular/platform-browser';
         CertDialogComponent,
         CatalogComponent,
         ProductComponent,
+        ProductDetailsComponent,
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),

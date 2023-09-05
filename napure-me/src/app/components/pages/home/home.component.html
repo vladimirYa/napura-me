@@ -56,6 +56,11 @@
         <div class="carousel" #carousel>
             <div class="carousel__window" id="home" data-section="home">
                 <div class="jumbo">
+                    <img
+                        class="new"
+                        src="../../../../assets/images/new.png"
+                        alt=""
+                    />
                     <!-- <div class="grid-row"> -->
                     <!-- <div class="grid-row__half-section"> -->
                     <div class="jumbotron__info" style="width: 50%">
@@ -102,27 +107,48 @@
                                 COLOR PROTECT
                             </li>
                         </ul>
-                        <div
-                            class="button button--action pulse-animation"
-                            (click)="
-                                scrollTo({
-                                    id: 'master',
-                                    isActive: true,
-                                    labelKey: 'header.becomeAMaster'
-                                })
-                            "
-                        >
-                            {{ "header.becomeAMaster" | translate }}
+                        <div class="ad">
+                            Join Napura chat and get 10% discount!
+                        </div>
+                        <div class="button-cover">
+                            <div
+                                class="button button--action pulse-animation"
+                                (click)="
+                                    scrollTo({
+                                        id: 'master',
+                                        isActive: true,
+                                        labelKey: 'header.becomeAMaster'
+                                    })
+                                "
+                            >
+                                Join chat
+                            </div>
                         </div>
                     </div>
                     <!-- </div> -->
                     <!-- <div class="grid-row__half-section"> -->
-                    <div style="width: 50%">
-                        <img
+                    <div style="width: 50%; height: 100%">
+                        <div
+                            #conva
+                            class="conva"
+                            style="
+                                width: 100% !important;
+                                height: 100% !important;
+                            "
+                        >
+                            <canvas
+                                id="canvas3d"
+                                style="
+                                    width: 100% !important;
+                                    height: 100% !important;
+                                "
+                            ></canvas>
+                        </div>
+                        <!-- <img
                             class="jumbotron__image"
                             src="../../../../assets/images/shampoo.webp"
                             alt="napura hair shampoo Montenegro"
-                        />
+                        /> -->
                         <p class="jumbotron__description" id="jdm">
                             {{ "jumbotron.description" | translate }}
                         </p>
@@ -136,14 +162,6 @@
                     alt="napura proffesional hair products Montenegro liquid item"
                 />
             </div>
-
-            <div
-                class="carousel__window lightgrey"
-                id="about"
-                data-section="about"
-            >
-                <app-about></app-about>
-            </div>
             <div
                 class="carousel__window white"
                 id="catalog"
@@ -151,6 +169,14 @@
             >
                 <app-catalog (showless)="showless($event)"></app-catalog>
             </div>
+            <div
+                class="carousel__window lightgrey"
+                id="about"
+                data-section="about"
+            >
+                <app-about></app-about>
+            </div>
+
             <div class="carousel__window" id="master" data-section="master">
                 <app-master></app-master>
             </div>
@@ -163,22 +189,6 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="footer">
-        <div class="footer__social">
-            <img src="../../../../assets/images/instagram.png" alt="" />
-        </div>
-        <div class="footer__social">
-            <img src="../../../../assets/images/whatsapp.png" alt="" />
-        </div>
-        <div class="footer__social">
-            <img
-                class="viber"
-                src="../../../../assets/images/viber.png"
-                alt=""
-            />
-        </div>
-    </div> -->
 </div>
 <div class="menu-items" *ngIf="isMobileMenuOpened">
     <div

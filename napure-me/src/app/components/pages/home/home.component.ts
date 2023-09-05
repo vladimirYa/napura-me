@@ -8,13 +8,14 @@ import {
     Renderer2,
     ViewChild,
 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { langs } from '../../common/lang/langs';
 import { MatDialog } from '@angular/material/dialog';
 import { LangDialogComponent } from '../../common/lang-dialog/lang-dialog.component';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { LOCAL_STORAGE } from '@ng-web-apis/common';
+import { Application } from '@splinetool/runtime';
 
 interface HeaderItem {
     id: string;
@@ -31,7 +32,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     @ViewChild('carousel') carsousel: ElementRef;
     @ViewChild('header') header: ElementRef;
     @ViewChild('kastyl') kastyl: ElementRef;
-
+    @ViewChild('conva') conva: ElementRef;
     langs: string[] = langs;
     isMobileMenuOpened: boolean = false;
 
@@ -51,15 +52,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
             isActive: true,
         },
         {
-            id: 'about',
-            labelKey: 'header.about',
-            isActive: false,
-        },
-        {
             id: 'catalog',
             labelKey: 'header.catalog',
             isActive: false,
         },
+        {
+            id: 'about',
+            labelKey: 'header.about',
+            isActive: false,
+        },
+
         {
             id: 'master',
             labelKey: 'header.becomeAMaster',
@@ -135,6 +137,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.syncActiveHItem(currentSection.id);
             }
         });
+        const canvas = document.getElementById('canvas3d');
+        const app = new Application(canvas as any);
+        app.load(
+            'https://prod.spline.design/ly87zIVYdGpm5mrO/scene.splinecode'
+        ).then(() => {
+            console.log(app);
+            app.canvas.style.width = '100%';
+            app.canvas.style.height = '100%';
+        });
+
+        // console.log()
     }
 
     scrollTo(headerItem: HeaderItem) {
@@ -158,8 +171,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
         });
     }
     showless(event: any) {
+        console.log(event);
+        // if (event) {
         let catalog = this.headerItems.find((item) => item.id === 'catalog');
         this.scrollTo(catalog as HeaderItem);
+        // }
     }
     toggleMenu() {
         this.isMobileMenuOpened = !this.isMobileMenuOpened;

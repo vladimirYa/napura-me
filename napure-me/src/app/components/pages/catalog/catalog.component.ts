@@ -81,9 +81,9 @@ export class CatalogComponent implements OnInit {
     ngOnInit(): void {}
 
     toggleShowMore() {
-        if (this.isShowMore) {
-            this.showless.emit({});
-        }
+        // if (this.isShowMore) {
+        // }
         this.isShowMore = !this.isShowMore;
+        this.showless.emit(this.isShowMore);
     }
 }

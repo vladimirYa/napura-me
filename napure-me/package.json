@@ -32,7 +32,9 @@
         "@nguniversal/express-engine": "^16.1.2",
         "@ngx-translate/core": "^15.0.0",
         "@ngx-translate/http-loader": "^8.0.0",
+        "@splinetool/runtime": "^0.9.437",
         "express": "^4.15.2",
+        "ngx-splide": "^2.0.2",
         "rxjs": "~7.5.0",
         "tslib": "^2.3.0",
         "zone.js": "~0.13.1"
