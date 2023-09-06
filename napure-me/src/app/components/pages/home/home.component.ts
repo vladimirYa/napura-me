@@ -100,30 +100,46 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }, 1000);
     }
 
+    setSectionLimits() {
+        setTimeout(() => {
+            let bottomSum = 0;
+            this.sectionLimits = [
+                ...(this._doc.querySelectorAll('[data-section]') as any),
+            ].map((section: HTMLElement, index: number) => {
+                console.log(section.clientHeight);
+                bottomSum += section.clientHeight;
+                return {
+                    top: section.offsetTop,
+                    bottom: bottomSum,
+                    id: section.id,
+                };
+            });
+        }, 500);
+    }
+
     ngAfterViewInit(): void {
+        const canvas = document.getElementById('canvas3d');
+        const app = new Application(canvas as any);
+        app.load(
+            'https://prod.spline.design/ly87zIVYdGpm5mrO/scene.splinecode'
+        ).then(() => {
+            console.log(app);
+            app.canvas.style.width = '100%';
+            app.canvas.style.height = '100%';
+        });
+
         const carouselEl = this.carsousel.nativeElement;
         this.sections = this._doc.querySelectorAll('[data-section]');
 
-        this.sectionLimits = [...this.sections].map(
-            (section: HTMLElement, index: number) => {
-                return {
-                    top: section.offsetTop,
-                    bottom:
-                        (this._doc.defaultView as Window).innerHeight *
-                        (index + 1),
-                    id: section.id,
-                };
-            }
-        );
-
+        this.setSectionLimits();
         let unlisten = this.renderer2.listen(carouselEl, 'scroll', (event) => {
             this.isHeaderDark = event.target.scrollTop > 77;
             if (this.isHeaderDark) {
                 this.renderer2.addClass(this.header.nativeElement, 'dark');
-                this.renderer2.addClass(this.kastyl.nativeElement, 'dark');
+                // this.renderer2.addClass(this.kastyl.nativeElement, 'dark');
             } else {
                 this.renderer2.removeClass(this.header.nativeElement, 'dark');
-                this.renderer2.removeClass(this.kastyl.nativeElement, 'dark');
+                // this.renderer2.removeClass(this.kastyl.nativeElement, 'dark');
             }
             let currentSection = this.sectionLimits.find((section, i) => {
                 return (
@@ -137,17 +153,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.syncActiveHItem(currentSection.id);
             }
         });
-        const canvas = document.getElementById('canvas3d');
-        const app = new Application(canvas as any);
-        app.load(
-            'https://prod.spline.design/ly87zIVYdGpm5mrO/scene.splinecode'
-        ).then(() => {
-            console.log(app);
-            app.canvas.style.width = '100%';
-            app.canvas.style.height = '100%';
-        });
-
-        // console.log()
     }
 
     scrollTo(headerItem: HeaderItem) {
@@ -166,6 +171,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     syncActiveHItem(id: string) {
+        console.log(id);
         this.headerItems.forEach((item: HeaderItem) => {
             item.isActive = item.id === id;
         });
@@ -175,6 +181,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         // if (event) {
         let catalog = this.headerItems.find((item) => item.id === 'catalog');
         this.scrollTo(catalog as HeaderItem);
+        this.setSectionLimits();
         // }
     }
     toggleMenu() {
