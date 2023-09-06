@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     currentLang: string = 'en';
     isHeaderDark: boolean = false;
     sections: any = [];
-
+    sectionLimits: any[] = [];
     activeHeaderItem: HeaderItem = {
         id: 'home',
         labelKey: 'header.home',
@@ -104,7 +104,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         const carouselEl = this.carsousel.nativeElement;
         this.sections = this._doc.querySelectorAll('[data-section]');
 
-        let sectionsLimits = [...this.sections].map(
+        this.sectionLimits = [...this.sections].map(
             (section: HTMLElement, index: number) => {
                 return {
                     top: section.offsetTop,
@@ -125,7 +125,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.renderer2.removeClass(this.header.nativeElement, 'dark');
                 this.renderer2.removeClass(this.kastyl.nativeElement, 'dark');
             }
-            let currentSection = sectionsLimits.find((section, i) => {
+            let currentSection = this.sectionLimits.find((section, i) => {
                 return (
                     event.target.scrollTop + 77 * (i + 1) >
                         section.top - window.innerHeight * 0.2 &&
