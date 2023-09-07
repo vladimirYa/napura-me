@@ -78,6 +78,19 @@ export class CatalogComponent implements OnInit {
             urlName: 'M9',
         },
     ];
+
+    catalog = {
+        anti_hair_loss: [
+            {
+                name: '',
+                size: '',
+                urlName: '',
+                relatedProducts: [],
+            },
+        ],
+        hair_growth: [],
+        repair: [],
+    };
     ngOnInit(): void {}
 
     toggleShowMore() {

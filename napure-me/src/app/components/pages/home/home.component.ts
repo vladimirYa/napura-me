@@ -62,11 +62,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
             isActive: false,
         },
 
-        {
-            id: 'master',
-            labelKey: 'header.becomeAMaster',
-            isActive: false,
-        },
+        // {
+        //     id: 'master',
+        //     labelKey: 'header.becomeAMaster',
+        //     isActive: false,
+        // },
         {
             id: 'wholesale',
             labelKey: 'header.wholesale',
@@ -123,7 +123,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         app.load(
             'https://prod.spline.design/ly87zIVYdGpm5mrO/scene.splinecode'
         ).then(() => {
-            console.log(app);
             app.canvas.style.width = '100%';
             app.canvas.style.height = '100%';
         });
@@ -136,10 +135,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.isHeaderDark = event.target.scrollTop > 77;
             if (this.isHeaderDark) {
                 this.renderer2.addClass(this.header.nativeElement, 'dark');
-                // this.renderer2.addClass(this.kastyl.nativeElement, 'dark');
             } else {
                 this.renderer2.removeClass(this.header.nativeElement, 'dark');
-                // this.renderer2.removeClass(this.kastyl.nativeElement, 'dark');
             }
             let currentSection = this.sectionLimits.find((section, i) => {
                 return (
@@ -171,18 +168,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     syncActiveHItem(id: string) {
-        console.log(id);
         this.headerItems.forEach((item: HeaderItem) => {
             item.isActive = item.id === id;
         });
     }
     showless(event: any) {
-        console.log(event);
-        // if (event) {
         let catalog = this.headerItems.find((item) => item.id === 'catalog');
         this.scrollTo(catalog as HeaderItem);
         this.setSectionLimits();
-        // }
     }
     toggleMenu() {
         this.isMobileMenuOpened = !this.isMobileMenuOpened;

@@ -43,5 +43,97 @@
         "required": "required",
         "shareContacts": "Share your contacts",
         "login": "login"
+    },
+    "catalog": {
+        "anti_hair_loss": {
+            "group_name": "Anti hair loss line",
+            "products": {
+                "S4": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "T4": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "D4": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                }
+            }
+        },
+        "moisture": {
+            "group_name": "INTENSE MOISTURE REPAIR LINE",
+            "products": {
+                "S8": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "C8": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "O8": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                }
+            }
+        },
+        "hair_repair": {
+            "group_name": "Hair Repair Line",
+            "products": {
+                "C9": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "S9": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "K9": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "M9": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                }
+            }
+        },
+        "hair_growth": {
+            "group_name": "Hair Growth Line",
+            "products": {
+                "S0": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "T0": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                }
+            }
+        },
+        "detox": {
+            "group_name": "Hair and scalp detox",
+            "products": {
+                "T1": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                }
+            }
+        }
     }
 }
