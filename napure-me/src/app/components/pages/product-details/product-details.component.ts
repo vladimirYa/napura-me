@@ -28,11 +28,6 @@ export class ProductDetailsComponent implements OnInit {
                     (product: Product) =>
                         product.urlName === params['productName']
                 );
-            // console.log(
-            //     this.catalog.find(
-            //         (group: Group) => group.groupId === params['group']
-            //     )
-            // );
             console.log(this.product);
         });
         this.titleService.setTitle(`NAPURA - ${this.productId}`);

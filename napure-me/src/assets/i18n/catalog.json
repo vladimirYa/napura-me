@@ -1,0 +1,110 @@
+{
+    "catalog": {
+        "anti_hair_loss": {
+            "group_name": "Anti hair loss line",
+            "products": {
+                "S4": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "T4": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "D4": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                }
+            }
+        },
+        "moisture": {
+            "group_name": "INTENSE MOISTURE REPAIR LINE",
+            "products": {
+                "C8": {
+                    "name": "C8 Nutry conditioner cream",
+                    "description": "",
+                    "whatitdo": [],
+                    "result": [],
+                    "ingr": ""
+                },
+                "S8": {
+                    "name": "S8 Nutry shampoo",
+                    "description": "",
+                    "whatitdo": [],
+                    "result": [],
+                    "ingr": ""
+                },
+                "O8": {
+                    "name": "O8 Nutry Oil mask",
+                    "description": "",
+                    "whatitdo": [],
+                    "result": [],
+                    "ingr": ""
+                }
+            }
+        },
+        "hair_repair": {
+            "group_name": "Hair Repair Line",
+            "products": {
+                "C9": {
+                    "name": "C9 Rikeir conditioner mask",
+                    "description": "",
+                    "whatitdo": [],
+                    "result": [],
+                    "ingr": ""
+                },
+                "S9": {
+                    "name": "S9 RIKEIR shampoo",
+                    "description": "",
+                    "whatitdo": [],
+                    "results": [],
+                    "ingr": ""
+                },
+                "K9": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                },
+                "M9": {
+                    "name": "",
+                    "description": "",
+                    "ingr": ""
+                }
+            }
+        },
+        "hair_growth": {
+            "group_name": "Hair Growth Line",
+            "products": {
+                "S0": {
+                    "name": "S0 Anagen shampoo",
+                    "description": "",
+                    "ingr": "",
+                    "whatitdo": [],
+                    "result": []
+                },
+                "T0": {
+                    "name": "T0 Anagen Post",
+                    "description": "",
+                    "whatitdo": [],
+                    "result": [],
+                    "ingr": ""
+                }
+            }
+        },
+        "detox": {
+            "group_name": "Hair and scalp detox",
+            "products": {
+                "T1": {
+                    "name": "T1 Purify Pre",
+                    "description": "",
+                    "whatitdo": [],
+                    "result": [],
+                    "ingr": ""
+                }
+            }
+        }
+    }
+}

@@ -52,16 +52,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
             isActive: true,
         },
         {
+            id: 'about',
+            labelKey: 'header.about',
+            isActive: false,
+        },
+        {
             id: 'catalog',
             labelKey: 'header.catalog',
             isActive: false,
         },
         {
-            id: 'about',
-            labelKey: 'header.about',
+            id: 'instruction',
             isActive: false,
+            labelKey: 'header.instruction',
         },
-
         // {
         //     id: 'master',
         //     labelKey: 'header.becomeAMaster',

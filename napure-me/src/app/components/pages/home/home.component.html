@@ -82,13 +82,6 @@
                                     src="../../../../assets/images/checked (1).png"
                                     alt=""
                                 />
-                                ANTI DANDRUFF
-                            </li>
-                            <li class="pl">
-                                <img
-                                    src="../../../../assets/images/checked (1).png"
-                                    alt=""
-                                />
                                 ANTI HAIR LOSS
                             </li>
                             <li class="pl">
@@ -103,14 +96,21 @@
                                     src="../../../../assets/images/checked (1).png"
                                     alt=""
                                 />
-                                COLOR PROTECT
+                                HAIR GROWTH
+                            </li>
+                            <li class="pl">
+                                <img
+                                    src="../../../../assets/images/checked (1).png"
+                                    alt=""
+                                />
+                                DETOX
                             </li>
                         </ul>
                         <div class="ad">
-                            Join Napura chat and get 10% discount!
+                            Join Napura chat and get <span>10% discount!</span>
                         </div>
                         <div class="button-cover">
-                            <div
+                            <!-- <div
                                 class="button button--action pulse-animation"
                                 (click)="
                                     scrollTo({
@@ -119,9 +119,14 @@
                                         labelKey: 'header.becomeAMaster'
                                     })
                                 "
+                            > -->
+                            <a
+                                class="button button--action pulse-animation"
+                                target="_blank"
+                                href="https://t.me/+1u4pHggiMdQ0ZThi"
+                                >Join chat</a
                             >
-                                Join chat
-                            </div>
+                            <!-- </div> -->
                         </div>
                     </div>
                     <!-- </div> -->
@@ -161,6 +166,14 @@
                     alt="napura proffesional hair products Montenegro liquid item"
                 />
             </div>
+
+            <div
+                class="carousel__window lightgrey"
+                id="about"
+                data-section="about"
+            >
+                <app-about></app-about>
+            </div>
             <div
                 class="carousel__window white"
                 id="catalog"
@@ -169,13 +182,12 @@
                 <app-catalog (showless)="showless($event)"></app-catalog>
             </div>
             <div
-                class="carousel__window lightgrey"
-                id="about"
-                data-section="about"
+                class="carousel__window white"
+                id="instruction"
+                data-section="instruction"
             >
-                <app-about></app-about>
+                <app-catalog></app-catalog>
             </div>
-
             <!-- <div class="carousel__window" id="master" data-section="master">
                 <app-master></app-master>
             </div> -->

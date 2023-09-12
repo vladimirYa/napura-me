@@ -45,10 +45,44 @@
     padding: 5px;
     text-decoration: underline;
     cursor: pointer;
-    // border-bottom: 1px solid;
     color: #c4c4c4;
 }
 
+.discount {
+    padding: 20px;
+    background-color: #0211a7;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 900;
+        span {
+            color: #72f289;
+        }
+    }
+    ul {
+        li {
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+}
+
+.button.white {
+    color: #07eaff;
+    border: 1px solid #07eaff;
+    font-weight: 600;
+
+    &:hover {
+        background-color: #07eaff;
+        color: #0211a7;
+    }
+}
 /// MEDIA ///
 
 @media only screen and (max-width: 450px) {
