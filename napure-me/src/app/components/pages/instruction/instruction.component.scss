@@ -1,0 +1,110 @@
+@import "../../../../assets/styles/variables.scss";
+
+:host {
+    display: block;
+    background: rgb(240, 240, 240);
+    box-sizing: border-box;
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+}
+.heading {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+.section-heading {
+    margin: 20px;
+}
+h2 {
+    line-height: 1.2;
+}
+.grid {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 100px;
+    margin-top: 70px;
+    h2 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        .polako {
+            background-color: $action-blue;
+            color: #fff;
+        }
+    }
+    &__cell {
+        width: 50%;
+        min-height: 500px;
+        position: relative;
+        box-sizing: border-box;
+        google-map {
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            box-sizing: border-box;
+        }
+    }
+}
+
+.oror {
+    position: relative;
+    width: 85px;
+    .or {
+        padding: 30px;
+        position: absolute;
+        font-size: 24px;
+        font-weight: 600;
+        top: 50%;
+    }
+}
+.button.full {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    img {
+        width: 20px;
+        margin-right: 15px;
+    }
+}
+.chat {
+    border-radius: 4px;
+    max-height: 200px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.field {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: underline;
+    margin: 20px 0;
+}
+::ng-deep .map-container {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+/// MEDIA ///
+
+@media only screen and (max-width: 450px) {
+    .oror {
+        display: none;
+    }
+    .grid {
+        display: block;
+        padding: 0 30px;
+
+        &__cell {
+            width: 100%;
+        }
+    }
+}

@@ -62,7 +62,10 @@
                     />
                     <!-- <div class="grid-row"> -->
                     <!-- <div class="grid-row__half-section"> -->
-                    <div class="jumbotron__info" style="width: 50%">
+                    <div
+                        class="jumbotron__info"
+                        style="width: 50%; z-index: 2; position: relative"
+                    >
                         <h1
                             class="jumbotron__title font--bold heading-border-bottom"
                         >
@@ -131,7 +134,7 @@
                     </div>
                     <!-- </div> -->
                     <!-- <div class="grid-row__half-section"> -->
-                    <div style="width: 50%; height: 100%">
+                    <div id="canvastyle" style="width: 50%; height: 100%">
                         <div
                             #conva
                             class="conva"
@@ -186,7 +189,7 @@
                 id="instruction"
                 data-section="instruction"
             >
-                <app-catalog></app-catalog>
+                <app-instruction></app-instruction>
             </div>
             <!-- <div class="carousel__window" id="master" data-section="master">
                 <app-master></app-master>

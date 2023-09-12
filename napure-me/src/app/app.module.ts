@@ -19,7 +19,11 @@ import { ContactFormComponent } from './components/common/contact-form/contact-f
 import { ContactDialogComponent } from './components/common/dialog/contact-dialog.component';
 import { LangComponent } from './components/common/lang/lang.component';
 import { LangDialogComponent } from './components/common/lang-dialog/lang-dialog.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+    HttpClient,
+    HttpClientJsonpModule,
+    HttpClientModule,
+} from '@angular/common/http';
 import { ApiService } from './services/api.service';
 import { AdminComponent } from './components/pages/admin/admin.component';
 import { CertDialogComponent } from './components/common/cert-dialog/cert-dialog.component';
@@ -29,6 +33,9 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { translateBrowserLoaderFactory } from './services/translate-loaders/translate-loader.browser';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
+import { InstructionComponent } from './components/pages/instruction/instruction.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { BannerComponent } from './components/common/banner/banner.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -36,6 +43,8 @@ import { ProductDetailsComponent } from './components/pages/product-details/prod
         AboutComponent,
         WholesaleComponent,
         BecomeAMasterComponent,
+        InstructionComponent,
+        BannerComponent,
         ContactFormComponent,
         ContactDialogComponent,
         LangComponent,
@@ -50,9 +59,11 @@ import { ProductDetailsComponent } from './components/pages/product-details/prod
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
         RouterModule,
         HttpClientModule,
+        HttpClientJsonpModule,
         TransferHttpCacheModule,
         AppRoutingModule,
         NgxTranslateModule,
+        GoogleMapsModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

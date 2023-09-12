@@ -1,0 +1,68 @@
+<h2 class="heading section-heading">how to get NAPURA</h2>
+
+<div class="grid">
+    <div *ngIf="apiLoaded | async" class="grid__cell">
+        <h2>
+            You can get NAPURA in
+            <a
+                href="https://www.instagram.com/polako.beauty.tivat"
+                target="_blank"
+                class="polako"
+                >Polako Beauty</a
+            >
+        </h2>
+
+        <google-map [zoom]="16" height="400px" [center]="polakoCoords">
+            <map-marker
+                [position]="polakoCoords"
+                [options]="markerOptions"
+            ></map-marker>
+        </google-map>
+    </div>
+    <div class="oror">
+        <div class="or">or</div>
+    </div>
+    <div class="grid__cell">
+        <h2>Contact with operator to get NAPURA</h2>
+        <img class="chat" src="../../../../assets/images/screen.jpg" alt="" />
+        <div class="button-cover">
+            <a
+                class="button button--action full pulse-animation"
+                target="_blank"
+                href="https://t.me/v_yaryhin"
+            >
+                <img
+                    src="../../../../assets/images/mes/telegram.png"
+                    alt=""
+                />Open chat in Telegramm</a
+            >
+        </div>
+        <div class="button-cover">
+            <a
+                class="button button--action full pulse-animation"
+                target="_blank"
+                href="https://t.me/v_yaryhin"
+            >
+                <img src="../../../../assets/images/mes/viber.png" alt="" />Open
+                chat in Viber</a
+            >
+        </div>
+        <div class="button-cover">
+            <a
+                class="button button--action full pulse-animation"
+                target="_blank"
+                href="https://t.me/v_yaryhin"
+            >
+                <img
+                    src="../../../../assets/images/mes/whatsapp.png"
+                    alt=""
+                />Open chat with Whatsapp</a
+            >
+        </div>
+    </div>
+</div>
+
+<div class="field">admin@napura.me</div>
+<div class="field" style="margin-bottom: 30px">+382 068 187 864</div>
+
+<app-banner></app-banner>

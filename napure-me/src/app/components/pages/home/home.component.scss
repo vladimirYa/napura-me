@@ -22,7 +22,7 @@
         box-sizing: border-box;
         padding: 0 50px;
         .ad {
-            background-color: #0211a7;
+            background-color: $action-blue;
             margin: 10px 0;
             padding: 10px;
             font-weight: bold;
@@ -246,6 +246,12 @@
 /// MEDIA ///
 
 @media only screen and (max-width: 450px) {
+    #canvastyle {
+        width: 100% !important;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+    }
     .menu {
         display: block;
         margin-left: auto;
@@ -275,6 +281,7 @@
     .header {
         background-color: #2d2d2d;
         color: #d2d0d2;
+        box-shadow: none;
         &__items {
             display: none;
         }
@@ -300,8 +307,13 @@
             height: auto;
             text-align: center;
             margin-top: 50px;
+            width: 100% !important;
+            backdrop-filter: blur(3px);
             .button {
-                display: none;
+                background-color: #039eac;
+                color: #fff;
+                width: 100%;
+                box-sizing: border-box;
             }
         }
         &__description {
